@@ -1,0 +1,194 @@
+<head>
+<meta charset="utf-8">
+<title>theBeekman_HTML5_300x250</title>`
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta property="og:type" content="website" />
+<link rel="stylesheet" href="base.css" />
+<link rel="stylesheet" href="media.css" />
+<script src="modernizr.2.6.2-min.js"></script>
+<!-- <script src="TimelineMax.js"></script> -->
+<script src="TimelineLite.js"></script>
+<script src="TweenLite.js"></script>
+<script src="CSSPlugin.js"></script>
+
+<!-- <script src="jquery.gsap.js"></script> -->
+<script src="jquery.js"></script>
+<script src="zepto.js"></script>
+<script src="utils.js"></script>
+<script
+    type="text/javascript"
+    src="https://s0.2mdn.net/ads/studio/Enabler.js">    
+</script>
+
+<script>
+// If true, start function. If false, listen for INIT.
+if (Enabler.isInitialized()) {
+    enablerInitHandler();
+    console.log("Enabler.isInitialized");
+} else {
+    Enabler.addEventListener(studio.events.StudioEvent.INIT, enablerInitHandler);
+}
+
+function enablerInitHandler() {
+    // Start ad, initialize animation,
+    // load in your image assets, call Enabler methods,
+    // and/or include other Studio modules.
+    console.log("enablerInitHandler");
+}
+window.onload = function() {
+  var cta = $( "#cta" );
+      }
+</script>
+</head>
+
+<body onload ="onLoad()" class="banner">
+
+    <div id="wrapper" role="main">
+
+
+        <section class="content wrap-max" id="content">
+
+            <div class="bg-exit" id="bg-exit"></div>
+            
+            
+            
+            <!-- THE BEEKMAN   ////// -->
+            <div class="imageone" id="imageone">
+
+            </div>            
+            
+             <!-- city hall   ////// -->
+                      
+            <div class="imagetwo" id="imagetwo"></div>
+            <!-- copy 3   ////// -->
+            <div class="imagethree" id="imagethree"></div>
+            <!-- living room   ////// -->
+            <div class="imagefour" id="imagefour"></div>
+             <!-- last frame   ////// -->
+            
+            <div class="finaltx1" id="finaltx1">ONE, TWO, THREE BEDROOM AND<br>PENTHOUSE CONDOMINIUM RESIDENCES<br>WITH ELEVATED VIEWS</div>
+            <div class="finaltx2" id="finaltx2">TWO BEDROOMS STARTING AT $2,975,000</div>
+            <div class="finaltx3" id="finaltx3">5 BEEKMAN STREET, NEW YORK, NY</div>
+          <div class="borderblack" id="borderblack"></div>  
+          <div class="borderlines" id="borderlines"></div>
+            <!-- <div class="cta" id="cta"><div class="ctatext">learn more</div></div> -->
+
+            
+   </div><!-- end wrapper -->
+  </section><!--end .content-->
+
+<script type="text/javascript">
+ 
+var xnum = 5;
+var ynum = 20;
+var ynumreturn = ynum-ynum;
+
+var ynumtwo = 8;
+var ynumtworeturn = ynumtwo-ynumtwo;
+
+
+var tl = new TimelineLite();
+//show copy 1
+// imageone = THE BEEKMAN logo
+tl.to(imageone, 3, {scaleX:1.2, scaleY:1.2, autoAlpha:.5, delay:.5});
+tl.to(imageone, 1, {autoAlpha:0, delay:-1});
+tl.to(imageone, .1, {y:-65, scaleX:.9, scaleY:.9});
+// imagetwo = city hall
+tl.to(imagetwo, 3, {scaleX:1, scaleY:1, autoAlpha:1, delay:-1});
+// imagethree = A SIGHT TO BEHOLD
+tl.to(imagethree, 1, {autoAlpha:1, delay:-3});
+// imagefour = living
+tl.to(imagefour, 3, {x:0, y:0,scaleX:1, scaleY:1, autoAlpha:1, delay:0});
+tl.to(imagetwo, .1, {autoAlpha:0, delay:0});
+tl.to(imagethree, .6, {autoAlpha:0, delay:0});
+tl.to(imagefour, 1, {autoAlpha:0, delay:-.5});
+// tl.to(imagethree, .6, {autoAlpha:0, delay:0});
+tl.to(borderblack, 1, {autoAlpha:0, delay:2});
+tl.to(borderlines, 1, {autoAlpha:1, delay:-3});
+// return of the logo
+tl.to(imageone, .3, {autoAlpha:1,delay:-4});
+
+tl.to(finaltx1, .7, {y:ynumtworeturn, autoAlpha:1,delay:-3});
+tl.to(finaltx2, .6, {y:ynumtworeturn, autoAlpha:1,delay:-2.5});
+tl.to(finaltx3, .6, {y:ynumtworeturn, autoAlpha:1,delay:-2});
+
+
+tl.pause();
+// true to upload to Double click
+ var fordoubleclick = true //bool
+ var myScroll;
+ function onLoad(){
+initme();
+tl.play();
+console.log("function onLoad");
+// upload to Double Click
+function readyfordd(e) {
+    console.log("fired readyfordd");
+
+     if (fordoubleclick) {
+     console.log("fired readyfordd + fordoubleclick is true");
+     document.getElementById("wrapper").style.border = "1px solid #333 border-box";
+     // document.getElementById("wrapper").style.border = "none";
+     
+     } else {
+     console.log("fordoubleclick is false");
+    }
+}
+      
+function initme(){
+  
+  //copy 1
+  TweenLite.to(imageone, 0, {scaleX:0.9, scaleY:0.9, autoAlpha:1});
+
+  // TweenLite.to(the, 0, {y:ynum, scaleX:0.0, scaleY:0.0, autoAlpha:0});
+  // TweenLite.to(rent, 0, {y:ynum, scaleX:0.0, scaleY:0.0, autoAlpha:0});
+  //copy 2
+  TweenLite.to(imagetwo, 0, {scaleX:1.4, scaleY:1.4, autoAlpha:0});
+  TweenLite.to(imagethree, 0, {autoAlpha:0});
+  TweenLite.to(imagefour, 0, {x:-14, y:-17, scaleX:.9, scaleY:.9, autoAlpha:0});
+
+  //   top: -14px;
+  // left: -17px;
+  TweenLite.to(borderlines, 0, {autoAlpha:0});
+  TweenLite.to(finaltx1, 0, {y:ynumtwo, autoAlpha:0});
+  TweenLite.to(finaltx2, 0, {y:ynumtwo, autoAlpha:0});
+  TweenLite.to(finaltx3, 0, {y:ynumtwo, autoAlpha:0});
+  console.log("function init");
+}
+
+
+// readyfordd();
+document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+
+    
+    // Main click Thru
+    function bgExitHandler(e) {
+    console.log("fired bgExitHandler");
+
+     if (fordoubleclick) {
+     console.log("fordoubleclick is true");
+     // Enable when uplaoding to Double Click Studio
+     Enabler.exit('Background Exit');
+     } else {
+     console.log("fordoubleclick is false");
+    // Disable when uplaoding to Double Click Studio
+     Enabler.exitOverride('Background Exit', 'http://www.bexsero.com/index.shtml');
+     }
+    }
+   function bgExitOver(e) {
+    console.log("fired bgExitOver");
+    //play cta animation
+    //tlcta.play();
+    //tlcta.restart();
+   }
+
+document.getElementById('bg-exit').addEventListener('click', bgExitHandler, false);
+document.getElementById("bg-exit").addEventListener("mouseover", bgExitOver); 
+
+}
+</script>
+</div><!--end #main-->
+</body>
+</html>
+<!-- <script src="app.js"></script> -->
